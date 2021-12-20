@@ -1,5 +1,12 @@
+@import url('http://fonts.cdnfonts.com/css/warcraft');
 :root{
-    --background: rgb(46, 111, 91);
+    /* --background: rgba(46, 111, 91, 0.9); */
+    --color_5: #030303;
+    --color_4: rgba(41, 0, 0, 0.9);
+    --color_3: #930C10;
+    --color_2: #F7CE65;
+    --color_1: #FFFEBD;
+    
 }
 
 *, *::before, *::after {
@@ -9,7 +16,8 @@
 body, html{
     margin: 0;
     font-weight: 400;
-    background: #E0C9A6;
+    background: var(--color_5);
+    font-family: 'warcraft', sans-serif;
 }
 
 .content{
@@ -24,12 +32,12 @@ body, html{
 /* nav stilovi pocinju ovde*/
 
 header{
-    background: var(--background);
+    background: var(--color_4);
     text-align: center;
     position: fixed;
     z-index: 999;
     width: 100vw;
-    color: #f1d6ac;
+    color: var(--color_2);
 }
 
 h1{
@@ -81,7 +89,7 @@ nav{
     text-align: left;
     top: 100%;
     left: 0;
-    background: var(--background);
+    background: var(--color_4);
     width: 100%;
     transform: scale(1, 0);
     transform-origin: top;
@@ -100,7 +108,7 @@ nav li{
 }
 
 nav a{
-    color: #FFEFD5;
+    color: var(--color_1);
     text-decoration: none;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -109,7 +117,7 @@ nav a{
 }
 
 nav a:hover{
-    color: #CB9274;
+    color: var(--color_2);
 }
 
 .nav-toggle:checked ~ nav {
@@ -119,6 +127,200 @@ nav a:hover{
 .nav-toggle:checked ~ nav a{
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+.fieldset{
+    position: absolute;
+    width: 200px;
+    height: 210px;
+    background-color: var(--color_4);
+    border-radius: 10% 10%;
+    border: none;
+    outline: none;
+}
+
+.fieldset.race{
+    top: 30%;
+    left: 10%;
+    transform: translate(-10%, -30%);
+}
+
+.fieldset.gender{
+    top: 30%;
+    left: 30%;
+    transform: translate(-30%, -30%);
+}
+
+.fieldset.class{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+}
+
+.fieldset.generator{
+    top: 30%;
+    left: 95%;
+    width: 220px;
+    height: 300px;
+    transform: translate(-90%, -30%);
+}
+
+.fieldset.stats{
+    position: absolute;
+    top: 30%;
+    left: 71%;
+    width: 220px;
+    height: 280px;
+    transform: translate(-70%, -30%);
+}
+
+legend{
+    color: var(--color_2);
+    font-family: 'warcraft', sans-serif;
+    font-size: 40px;
+}
+
+label{
+    color: var(--color_1);
+    font-family: 'warcraft', sans-serif;
+}
+
+.name_select{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 20px;
+    background-color: var(--color_4);
+    border-color: transparent;
+    color: var(--color_2);
+    font-family: 'warcraft', sans-serif;
+    font-size: 15px;
+    
+}
+
+.save{
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -57%);
+    height: 40px;
+    background-color: var(--color_4);
+    border-color: transparent;
+    border-radius: 10px;
+    color: var(--color_1);
+    font-family: 'warcraft', sans-serif;
+    font-size: 30px;
+    transition: 150ms ease-in-out;
+}
+
+.save:hover{
+    background-color: var(--color_2);
+    color: var(--color_4);
+    border-radius: 20px;
+}
+
+.red{
+  position: absolute;
+  color: red;
+  font-family: 'warcraft', sans-serif;
+}
+
+.name_error{
+  position: absolute;
+  top:53%;
+  left: 50%;
+  transform: translate(-50%, -53%);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.buttons{
+  height: 40px;
+  background-color: var(--color_5);
+  border-color: transparent;
+  border-radius: 10px;
+  color: var(--color_1);
+  font-family: 'warcraft', sans-serif;
+  font-size: 19px;
+  transition:  250ms ease-in-out;
+
+}
+
+.buttons:hover{
+    background-color: var(--color_2);
+    border-radius: 20px;
+    color: var(--color_4);
+}
+
+.assign{
+  z-index: 1000;
+  height: 30px;
+  width: 50px;
+  transition:  250ms ease-in-out;
+
+}
+
+.num_field{
+  position: absolute;
+  left: 60%;
+  transform: translateX(-60%);
+  border: 2px solid var(--color_1);
+  background-color: var(--color_5);
+  color: var(--color_2);
+  height: 30px;
+  width: 60px;
+  text-align: center;
+  font-display: block;
+  font-family: 'warcraft', sans-serif;
+  font-size: 40px;
+}
+
+
+.ul_stats{
+  list-style-type: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+  margin-left: 0;
+}
+.stats_labels{
+  display: none;
+  position: absolute;
+  text-align: center;
+  align-content: center;
+  left: 5%;
+  height: 30px;
+  width: 45px;
+  background-color: var(--color_2);
+  border-color: transparent;
+  border-radius: 20px;
+  font-family: 'warcraft', sans-serif;
+  font-size: 19px;
+  transition: 350ms ease-in-out;
+}
+.label_text{
+  color: var(--color_4);
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 250ms ease-in-out;
+}
+.assign_reset{
+  position: absolute;
+  width: 60px;
+  top: 60%;
+  left: 40%;
+  transform: translatex(-40%);
+}
+::placeholder{
+    color: var(--color_1);
 }
 
 @media screen and (min-width: 1010px){

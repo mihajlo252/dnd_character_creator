@@ -15,7 +15,7 @@
 
     <div class="container">
         <header>
-            <h1 class="logo">Logo</h1>
+            <h1 class="logo">WarCraft</h1>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <nav>
                 <ul>
@@ -29,9 +29,193 @@
                 <span></span>
             </label>
         </header>
-        
+
         <main>
-            
+            <form action="index.php" method="POST">
+
+                <fieldset name="form_three" class="fieldset race">
+                    <legend>Race</legend>
+
+
+                    <input type="radio" class="radio" name="race" value="human">
+                    <label>Human</label> <br />
+
+
+
+                    <input type="radio" class="radio" name="race" value="dwarf">
+                    <label>Dwarf</label> <br />
+
+
+                    <input type="radio" class="radio" name="race" value="nightelf">
+                    <label>Nighelf</label> <br />
+
+                    <input type="radio" class="radio" name="race" value="undead">
+                    <label>Undead</label> <br />
+
+                    <input type="radio" class="radio" name="race" value="orc">
+                    <label>Orc</label> <br />
+
+                    <input type="radio" class="radio" name="race" value="troll">
+                    <label>Troll</label> <br />
+
+                    <input type="radio" class="radio" name="race" value="bloodelf">
+                    <label>Bloodelf</label> <br />
+
+
+                    <div class="red">
+                        
+                    </div>
+                </fieldset>
+
+
+
+                <fieldset name="form_one" class="fieldset gender">
+                    <legend>Gender</legend>
+
+
+                    <input type="radio" class="radio" name="gender" value="male">
+                    <label>Male</label> <br />
+
+
+
+                    <input type="radio" class="radio" name="gender" value="female">
+                    <label>Female</label> <br />
+
+
+                    <input type="radio" class="radio" name="gender" value="non-binary">
+                    <label>Non-binary</label> <br />
+
+
+                    <div class="red">
+                        
+                    </div>
+                </fieldset>
+
+
+
+
+                <fieldset name="form_two" class="fieldset class">
+                    <legend>Class</legend>
+
+
+                    <input type="radio" class="radio" name="class" value="warrior">
+                    <label>Warrior</label> <br />
+
+
+
+                    <input type="radio" class="radio" name="class" value="rogue">
+                    <label>Rogue</label> <br />
+
+
+
+                    <input type="radio" class="radio" name="class" value="mage">
+                    <label>Mage</label> <br />
+
+
+
+                    <input type="radio" class="radio" name="class" value="warlock">
+                    <label>Warlock</label> <br />
+
+
+                    <input type="radio" class="radio" name="class" value="paladin">
+                    <label>Paladin</label> <br />
+
+
+                    <input type="radio" class="radio" name="class" value="artificer">
+                    <label>Artificer</label> <br />
+
+
+                    <input type="radio" class="radio" name="class" value="ranger">
+                    <label>Ranger</label> <br />
+
+
+                    <input type="radio" class="radio" name="class" value="bard">
+                    <label>Bard</label> <br />
+
+
+                    <div class="red">
+                        
+                    </div>
+
+                </fieldset>
+
+                <fieldset name="form_four" class="fieldset generator">
+                    <legend>Dice throw</legend>
+
+                    <input type="button" id="choose_one" name="choose_one" value="Select" onclick="choose(1)"
+                        class="buttons choose_one">
+                    <input type="number" id="random_num_one" name="random_num" value="" readonly
+                        class="num_field random_num_one">
+
+                    <br><br>
+
+                    <input type="button" id="choose_two" name="choose_two" value="Select" onclick="choose(2)"
+                        class="buttons choose_two">
+                    <input type="number" id="random_num_two" name="random_num" value="" readonly
+                        class="num_field random_num_two">
+
+                    <br><br>
+
+                    <input type="button" id="choose_three" name="choose_three" value="Select" onclick="choose(3)"
+                        class="buttons choose_three">
+                    <input type="number" id="random_num_three" name="random_num" value="" readonly
+                        class="num_field random_num_three">
+                    <br><br>
+                    <input type="button" name="submit" value="Throw 3d20" onclick="document.getElementById('random_num_one').value = generate(0, 20),
+                      document.getElementById('random_num_two').value = generate(0, 20),
+                      document.getElementById('random_num_three').value = generate(0, 20)" class="buttons generate">
+                    <div id="error_gen" style="color: red" class="error_gen red"></div>
+
+                </fieldset>
+
+
+                <fieldset name="form_five" class="fieldset stats">
+                    <legend>Stats</legend>
+
+                    <ul class="ul_stats">
+
+                        <li>
+                            <input type="button" id="strength_assign" name="str" value="STR" onclick="assign(1)"
+                                class="buttons assign strength_assign">
+                            <input type="number" id="strength" name="strength" value="" readonly
+                                class="num_field strength">
+                            <label for="strength" class="stats_labels" id="str_label">
+                                <div class="label_text" id="str_label_text">STR</div><label>
+                        </li>
+                        <br>
+
+                        <li>
+                            <input type="button" id="agility_assign" name="agi" value="AGI" onclick="assign(2)"
+                                class="buttons assign agility_assign">
+                            <input type="number" id="agility" name="agility" value="" readonly
+                                class="num_field agility">
+                            <label for="agility" class="stats_labels" id="agi_label">
+                                <div class="label_text" id="agi_label_text">AGI</div><label>
+                        </li>
+                        <br>
+
+                        <li>
+                            <input type="button" id="intellect_assign" name="int" value="INT" onclick="assign(3)"
+                                class="buttons assign intellect_assign">
+                            <input type="number" id="intellect" name="intellect" value="" readonly
+                                class="num_field intellect">
+                            <label for="intellect" class="stats_labels" id="int_label">
+                                <div class="label_text" id="int_label_text">INT</div><label>
+                        </li>
+
+                        <li>
+                            <input type="button" id="assign_reset" class="buttons assign assign_reset" value="Reset"
+                                onclick="reset_assign()">
+                        </li>
+                    </ul>
+
+                </fieldset>
+                <input type="text" name="input_name" placeholder="Type a name for your character e.g. Juan"
+                    class="name_select">
+                <div class="red name_error">
+                </div>
+                <input type="submit" name="submit" value="Save character" class="save">
+
         </main>
 
     </div>
