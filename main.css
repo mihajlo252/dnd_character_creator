@@ -1,11 +1,12 @@
 @import url('http://fonts.cdnfonts.com/css/warcraft');
 :root{
     /* --background: rgba(46, 111, 91, 0.9); */
-    --color_5: #030303;
-    --color_4: rgba(41, 0, 0, 0.9);
-    --color_3: #930C10;
-    --color_2: #F7CE65;
-    --color_1: #FFFEBD;
+    /* #0B0C10 , #1F2833 , #C5C6C7 , #68FCF1 , #45A29E  */
+    --color_5: #1f2833;
+    --color_4: #C5C6C7;
+    --color_3: #45A29E;
+    --color_2: #0b0c10;
+    --color_1: #68FCF1;
     
 }
 
@@ -32,12 +33,12 @@ body, html{
 /* nav stilovi pocinju ovde*/
 
 header{
-    background: var(--color_4);
+    background: transparent /* var(--color_4) */;
     text-align: center;
     position: fixed;
     z-index: 999;
     width: 100vw;
-    color: var(--color_2);
+    color: var(--color_3);
 }
 
 .logo{
@@ -76,7 +77,7 @@ header{
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
     display: block;
-    background: white;
+    background: #45A29E;
     height: 2px;
     width: 2em;
     border-radius: 2px;
@@ -102,10 +103,10 @@ nav{
     text-align: left;
     top: 100%;
     left: 0;
-    background: var(--color_4);
-    width: 100%;
-    transform: scale(1, 0);
-    transform-origin: top;
+    background: var(--color_5);
+    width: 30%;
+    transform: scale(0, 1);
+    transform-origin: left;
     transition: transform 400ms ease-in-out;
 }
 
@@ -146,7 +147,7 @@ nav a:hover{
     position: absolute;
     width: 200px;
     height: 210px;
-    background-color: var(--color_4);
+    background-color: var(--color_2);
     border-radius: 10% 10%;
     border: none;
     outline: none;
@@ -188,7 +189,7 @@ nav a:hover{
 }
 
 legend{
-    color: var(--color_2);
+    color: var(--color_4);
     font-family: 'warcraft', sans-serif;
     font-size: 40px;
 }
@@ -205,9 +206,9 @@ label{
     transform: translate(-50%, -50%);
     width: 300px;
     height: 20px;
-    background-color: var(--color_4);
+    background-color: var(--color_2);
     border-color: transparent;
-    color: var(--color_2);
+    color: var(--color_1);
     font-family: 'warcraft', sans-serif;
     font-size: 15px;
     
@@ -219,7 +220,7 @@ label{
     left: 50%;
     transform: translate(-50%, -57%);
     height: 40px;
-    background-color: var(--color_4);
+    background-color: var(--color_2);
     border-color: transparent;
     border-radius: 10px;
     color: var(--color_1);
@@ -229,8 +230,8 @@ label{
 }
 
 .save:hover{
-    background-color: var(--color_2);
-    color: var(--color_4);
+    background-color: var(--color_3);
+    color: var(--color_2);
     border-radius: 20px;
 }
 
@@ -261,9 +262,9 @@ label{
 }
 
 .buttons:hover{
-    background-color: var(--color_2);
+    background-color: var(--color_3);
     border-radius: 20px;
-    color: var(--color_4);
+    color: var(--color_2);
 }
 
 .assign{
@@ -278,9 +279,9 @@ label{
   position: absolute;
   left: 60%;
   transform: translateX(-60%);
-  border: 2px solid var(--color_1);
+  border: none;
   background-color: var(--color_5);
-  color: var(--color_2);
+  color: var(--color_1);
   height: 30px;
   width: 60px;
   text-align: center;
@@ -308,7 +309,7 @@ label{
   left: 5%;
   height: 30px;
   width: 45px;
-  background-color: var(--color_2);
+  background-color: var(--color_3);
   border-color: transparent;
   border-radius: 20px;
   font-family: 'warcraft', sans-serif;
@@ -317,7 +318,7 @@ label{
 }
 
 .label_text{
-  color: var(--color_4);
+  color: var(--color_2);
   position: absolute;
   margin: 0;
   top: 50%;
@@ -335,12 +336,12 @@ label{
 }
 
 ::placeholder{
-    color: var(--color_1);
+    color: var(--color_4);
 }
 
 
 /* 767 small   -   1025 medium */
-@media screen and (min-width: 1170px){
+@media screen and (min-width: 1090px){
 
     .nav-toggle-label{
         display: none;
@@ -368,7 +369,7 @@ label{
     nav{
         all: unset;
         margin-right: 10px;
-        grid-column: 2 / 3 ;   
+        grid-column: 3 / 4 ;   
         display: flex;
         justify-content: flex-end;
         align-items: center;
