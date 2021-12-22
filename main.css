@@ -40,9 +40,22 @@ header{
     color: var(--color_2);
 }
 
-h1{
+.logo{
+    display: flex;
+    top: 2px;
+    margin-left: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.head_title{
+    margin: auto 0;
     font-size: 50px;
-    
+}
+
+.logo_title{
+    height: 6rem; 
+    width: 6rem;
 }
 
 .nav-toggle{
@@ -128,7 +141,6 @@ nav a:hover{
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
 }
-
 
 .fieldset{
     position: absolute;
@@ -277,7 +289,6 @@ label{
   font-size: 40px;
 }
 
-
 .ul_stats{
   list-style-type: none;
   position: absolute;
@@ -288,6 +299,7 @@ label{
   margin-top: 10%;
   margin-left: 0;
 }
+
 .stats_labels{
   display: none;
   position: absolute;
@@ -303,6 +315,7 @@ label{
   font-size: 19px;
   transition: 350ms ease-in-out;
 }
+
 .label_text{
   color: var(--color_4);
   position: absolute;
@@ -312,6 +325,7 @@ label{
   transform: translate(-50%, -50%);
   transition: 250ms ease-in-out;
 }
+
 .assign_reset{
   position: absolute;
   width: 60px;
@@ -319,11 +333,14 @@ label{
   left: 40%;
   transform: translatex(-40%);
 }
+
 ::placeholder{
     color: var(--color_1);
 }
 
-@media screen and (min-width: 1010px){
+
+/* 767 small   -   1025 medium */
+@media screen and (min-width: 1170px){
 
     .nav-toggle-label{
         display: none;
@@ -332,23 +349,31 @@ label{
     header{
         display: grid;
         grid-template-columns: .2fr 1fr minmax(1000px, 1fr) 1fr;
-        
     }
 
     .logo{
+        display: flex;
         top: 5px;
         margin-left: 10px;
-        grid-column: 1 / 3;
+        grid-column: 1 / 2;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .logo_title{
+        margin: auto 0;
+        font-size: 50px;
     }
 
     nav{
         all: unset;
         margin-right: 10px;
-        grid-column: 3 / 4 ;   
+        grid-column: 2 / 3 ;   
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        width: 800px;
     }
 
     nav li{
