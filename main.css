@@ -1,17 +1,18 @@
 @import url('http://fonts.cdnfonts.com/css/warcraft');
 :root{
     /* --background: rgba(46, 111, 91, 0.9); */
-    /* #0B0C10 , #1F2833 , #C5C6C7 , #68FCF1 , #45A29E  */
-    --color_5: #1f2833;
-    --color_4: #C5C6C7;
-    --color_3: #45A29E;
-    --color_2: #0b0c10;
-    --color_1: #68FCF1;
+    /* #1F2833, #4C5561 ,   */
+    --color_6: #01474ee6;
+    --color_4: #080a0e;
+    --color_3: #01454b;
+    --color_2: #FF8C40;
+    --color_1: #FFE8D1;
     --bg_gradient: linear-gradient(
         135deg,
-        #0b0c10 10%,
-        #1f2833 40%,
-        #45A29E 70%
+        #080a0ee6, 
+        #01474e, 
+        #FF8C40, 
+        #FFE8D1
     );
     
 }
@@ -24,13 +25,13 @@ body, html{
     margin: 0;
     font-weight: 400;
     height: 100vh;
-    background-image: var(--bg_gradient);
-    background-size: 150%;
-    background-position: left;
+    background-color: var(--color_4);
+    background-size: cover;
+    /* background-position: left; */
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'warcraft', sans-serif;
-    animation: bg-animation 15s infinite alternate;
+    /* animation: bg-animation 15s infinite alternate; */
 }
 
 @keyframes bg-animation{
@@ -42,9 +43,7 @@ body, html{
     position: relative;
 }
 
-/* nav stilovi pocinju ovde*/
-
-
+/* nav css pocinje ovde*/
 
 header{
     background: transparent;
@@ -53,12 +52,12 @@ header{
     position: fixed;
     z-index: 999;
     width: 100vw;
-    color: var(--color_3);
+    color: var(--color_2);
 }
 
 .logo{
+    position: relative;
     display: flex;
-    gap: 10px;
     top: 2px;
     margin-left: 10px;
     justify-content: center;
@@ -66,13 +65,22 @@ header{
 }
 
 .head_title{
+    position: relative;
+    height: 8rem; 
+    width: 14rem;
     margin: auto 0;
-    font-size: 50px;
+    animation: logo_bloom 2s infinite alternate;
+
+}
+@keyframes logo_bloom{
+    0%{opacity: 0}
+    100%{opacity: 1}
 }
 
 .logo_title{
-    height: 5rem; 
-    width: 5rem;
+    position: absolute;
+    height: 8rem; 
+    width: 14rem;
 }
 
 .nav-toggle{
@@ -93,7 +101,7 @@ header{
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
     display: block;
-    background: #45A29E;
+    background: var(--color_1);
     height: 2px;
     width: 2em;
     border-radius: 2px;
@@ -116,7 +124,7 @@ header{
 
 nav{
     position: absolute;
-    background-color: var(--color_5);
+    background-color: var(--color_6);
     text-align: left;
     top: 100%;
     left: 0;
@@ -147,7 +155,7 @@ nav a{
 }
 
 nav a:hover{
-    color: var(--color_3);
+    color: var(--color_2);
 }
 
 .nav-toggle:checked ~ nav {
@@ -173,29 +181,35 @@ main{
 .characteristics{
     display: grid;
     grid-template-columns: repeat(2, 0.5fr);
-    gap: 5%;
+    gap: 3em 1em;
     margin-top: 10%;
-    margin-left: 40%;
-    transform: translateX(-40%);
+    justify-content: center;
+    align-items: center;
 }
 
-.fieldset{
-
-    width: 200px;
-    height: 210px; 
-    background-color: var(--color_2);
+.characteristics > .fieldset{
+    width: 15em;
+    height: 15em;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: var(--color_3);
     border-radius: 10% 10%;     
     border: none;
     outline: none;
 }
 
 .fieldset.race{
+    grid-column: 1 / 2;
 }
 
 .fieldset.gender{
+    grid-column: 2 / 3;
 }
 
 .fieldset.class{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    grid-column: -3 / -1;
 }
 
 .fieldset.generator{
@@ -216,7 +230,7 @@ main{
 } 
 
 legend{
-    color: var(--color_4);
+    color: var(--color_2);
     font-family: 'warcraft', sans-serif;
     font-size: 40px;
 }
@@ -235,7 +249,7 @@ label{
     height: 20px;
     background-color: var(--color_2);
     border-color: transparent;
-    color: var(--color_1);
+    color: var(--color_4);
     font-family: 'warcraft', sans-serif;
     font-size: 15px;
     
@@ -250,7 +264,7 @@ label{
     background-color: var(--color_2);
     border-color: transparent;
     border-radius: 10px;
-    color: var(--color_1);
+    color: var(--color_4);
     font-family: 'warcraft', sans-serif;
     font-size: 30px;
     transition: 150ms ease-in-out;
@@ -281,7 +295,7 @@ label{
   background-color: var(--color_5);
   border-color: transparent;
   border-radius: 10px;
-  color: var(--color_1);
+  color: var(--color_4);
   font-family: 'warcraft', sans-serif;
   font-size: 19px;
   transition:  250ms ease-in-out;
@@ -308,7 +322,7 @@ label{
   transform: translateX(-60%);
   border: none;
   background-color: var(--color_5);
-  color: var(--color_1);
+  color: var(--color_4);
   height: 30px;
   width: 60px;
   text-align: center;
@@ -367,7 +381,7 @@ label{
 }
 
 
-/* 767 small   -   1025 medium */
+/* 610 small   -   1025 medium */
 @media screen and (min-width: 1090px){
 
     .nav-toggle-label{
