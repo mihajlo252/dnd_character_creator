@@ -1,27 +1,26 @@
 @import url('http://fonts.cdnfonts.com/css/warcraft');
-:root{
+
+:root {
     /* --background: rgba(46, 111, 91, 0.9); */
     /* #1F2833, #4C5561 ,   */
-    --color_6: #01474ee6;
+    --color_5: #01474ee6;
     --color_4: #080a0e;
     --color_3: #01454b;
     --color_2: #FF8C40;
     --color_1: #FFE8D1;
-    --bg_gradient: linear-gradient(
-        135deg,
-        #080a0ee6, 
-        #01474e, 
-        #FF8C40, 
-        #FFE8D1
-    );
-    
+    --bg_gradient: linear-gradient(135deg,
+            #080a0ee6,
+            #01474e,
+            #FF8C40,
+            #FFE8D1);
+
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-body, html{
+body, html {
     margin: 0;
     font-weight: 400;
     height: 100vh;
@@ -34,28 +33,33 @@ body, html{
     /* animation: bg-animation 15s infinite alternate; */
 }
 
-@keyframes bg-animation{
-    0%{background-position: left;}
-    100%{background-position: right;}
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
 }
 
-.container{
+.container {
     position: relative;
 }
 
 /* nav css pocinje ovde*/
 
-header{
+header {
     background: transparent;
     text-align: center;
     margin-top: 10px;
-    position: fixed;
+    position: absolute;
     z-index: 999;
     width: 100vw;
     color: var(--color_2);
 }
 
-.logo{
+.logo {
     position: relative;
     display: flex;
     top: 2px;
@@ -64,30 +68,36 @@ header{
     text-align: center;
 }
 
-.head_title{
+.head_title {
     position: relative;
-    height: 8rem; 
+    height: 8rem;
     width: 14rem;
     margin: auto 0;
     animation: logo_bloom 2s infinite alternate;
 
 }
-@keyframes logo_bloom{
-    0%{opacity: 0}
-    100%{opacity: 1}
+
+@keyframes logo_bloom {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
 }
 
-.logo_title{
+.logo_title {
     position: absolute;
-    height: 8rem; 
+    height: 8rem;
     width: 14rem;
 }
 
-.nav-toggle{
+.nav-toggle {
     display: none;
 }
 
-.nav-toggle-label{
+.nav-toggle-label {
     position: absolute;
     top: 0;
     left: 0;
@@ -110,21 +120,21 @@ header{
 
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-    content:'';
+    content: '';
     position: absolute;
 }
 
-.nav-toggle-label span::before{
+.nav-toggle-label span::before {
     bottom: 7px;
 }
 
-.nav-toggle-label span::after{
+.nav-toggle-label span::after {
     top: 7px;
 }
 
-nav{
+nav {
     position: absolute;
-    background-color: var(--color_6);
+    background-color: var(--color_5);
     text-align: left;
     top: 100%;
     left: 0;
@@ -134,18 +144,18 @@ nav{
     transition: transform 400ms ease-in-out;
 }
 
-nav ul{
-    
+nav ul {
+
     padding: 0;
     list-style: none;
 }
 
-nav li{
+nav li {
     margin-bottom: 1em;
     margin-left: 1em;
 }
 
-nav a{
+nav a {
     color: var(--color_1);
     text-decoration: none;
     font-size: 1.1rem;
@@ -154,97 +164,116 @@ nav a{
     transition: opacity 150ms ease-in-out;
 }
 
-nav a:hover{
+nav a:hover {
     color: var(--color_2);
 }
 
-.nav-toggle:checked ~ nav {
+.nav-toggle:checked~nav {
     transform: scale(1, 1)
 }
 
-.nav-toggle:checked ~ nav a{
+.nav-toggle:checked~nav a {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
 }
 
 /* Main css pocinje ovde */
 
-main{
+main {
     position: absolute;
     top: 20%;
     height: 50vh;
     width: 100vw;
-    margin-top: 10%;
+    margin-top: 20vh;
 }
 
 
-.characteristics{
+.characteristics {
     display: grid;
-    grid-template-columns: repeat(2, 0.5fr);
-    gap: 3em 1em;
-    margin-top: 10%;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em 2em;
 }
 
-.characteristics > .fieldset{
-    width: 15em;
+.fieldset {
+    width: 10em;
     height: 15em;
-    margin-right: 10%;
-    margin-left: 10%;
     background-color: var(--color_3);
-    border-radius: 10% 10%;     
+    border-radius: 10% 10%;
     border: none;
     outline: none;
 }
 
-.fieldset.race{
+.fieldset.race {
+    justify-self: right;
     grid-column: 1 / 2;
+
 }
 
-.fieldset.gender{
-    grid-column: 2 / 3;
-}
-
-.fieldset.class{
+.fieldset.gender {
     margin-left: 50%;
     transform: translateX(-50%);
     grid-column: -3 / -1;
+    height: 8em;
 }
 
-.fieldset.generator{
-    top: 30%;
-    left: 95%;
-    width: 220px;
-    height: 300px;
-    transform: translate(-90%, -30%);
+.fieldset.class {
+    grid-column: 2 / 3;
 }
 
-.fieldset.stats{
-    position: absolute;
-    top: 30%;
-    left: 71%;
-    width: 220px;
-    height: 280px;
-    transform: translate(-70%, -30%);
-} 
+.divider{
+    display: block;
+    position: relative;
+    margin-top: 5vh;
+    margin-left: 5vw;
+    width: 90vw;
+    height: 2px;
+    background-color: var(--color_1);
+    
+}
 
-legend{
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em 2em;
+    margin-top: 2em;
+}
+
+.fieldset.generator {
+    position: relative;
+    width: 10em;
+    height: 19em;
+    grid-column: 2 / 3;
+    justify-self: left;
+}
+
+.fieldset.stats {
+    position: relative;
+    width: 10em;
+    grid-column: 1 / 2;
+    justify-self: right;
+}
+
+legend {
     color: var(--color_2);
     font-family: 'warcraft', sans-serif;
     font-size: 40px;
 }
 
-label{
+label {
     color: var(--color_1);
     font-family: 'warcraft', sans-serif;
 }
 
-.name_select{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.finish{
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.name_select {
+    
     width: 300px;
     height: 20px;
     background-color: var(--color_2);
@@ -252,14 +281,13 @@ label{
     color: var(--color_4);
     font-family: 'warcraft', sans-serif;
     font-size: 15px;
-    
+    grid-column: 1 / 2;
+    justify-self: center;
+
 }
 
-.save{
-    position: absolute;
-    top: 57%;
-    left: 50%;
-    transform: translate(-50%, -57%);
+.save {
+    
     height: 40px;
     background-color: var(--color_2);
     border-color: transparent;
@@ -268,132 +296,140 @@ label{
     font-family: 'warcraft', sans-serif;
     font-size: 30px;
     transition: 150ms ease-in-out;
+    
+    grid-column: 1 / 2;
+    justify-self: center;
 }
 
-.save:hover{
+.save:hover {
     background-color: var(--color_3);
     color: var(--color_2);
     border-radius: 20px;
 }
 
-.red{
-  position: absolute;
-  color: red;
-  font-family: 'warcraft', sans-serif;
+.red {
+    position: absolute;
+    color: red;
+    font-family: 'warcraft', sans-serif;
 }
 
-.name_error{
-  position: absolute;
-  top:53%;
-  left: 50%;
-  transform: translate(-50%, -53%);
-  background: rgba(0, 0, 0, 0.8);
+.name_error {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -53%);
+    background: rgba(0, 0, 0, 0.8);
 }
 
-.buttons{
-  height: 40px;
-  background-color: var(--color_5);
-  border-color: transparent;
-  border-radius: 10px;
-  color: var(--color_4);
-  font-family: 'warcraft', sans-serif;
-  font-size: 19px;
-  transition:  250ms ease-in-out;
-
-}
-
-.buttons:hover{
-    background-color: var(--color_3);
-    border-radius: 20px;
+.buttons {
+    height: 40px;
+    background-color: var(--color_4);
+    border-color: transparent;
+    border-radius: 10px;
     color: var(--color_2);
-}
-
-.assign{
-  z-index: 1000;
-  height: 30px;
-  width: 50px;
-  transition:  250ms ease-in-out;
+    font-family: 'warcraft', sans-serif;
+    font-size: 19px;
+    transition: 250ms ease-in-out;
 
 }
 
-.num_field{
-  position: absolute;
-  left: 60%;
-  transform: translateX(-60%);
-  border: none;
-  background-color: var(--color_5);
-  color: var(--color_4);
-  height: 30px;
-  width: 60px;
-  text-align: center;
-  font-display: block;
-  font-family: 'warcraft', sans-serif;
-  font-size: 40px;
+.buttons:hover {
+    background-color: var(--color_2);
+    border-radius: 20px;
+    color: var(--color_4);
 }
 
-.ul_stats{
-  list-style-type: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin-top: 10%;
-  margin-left: 0;
+.assign {
+    position: relative;
+    height: 30px;
+    width: 50px;
+    transition: 250ms ease-in-out;
 }
 
-.stats_labels{
-  display: none;
-  position: absolute;
-  text-align: center;
-  align-content: center;
-  left: 5%;
-  height: 30px;
-  width: 45px;
-  background-color: var(--color_3);
-  border-color: transparent;
-  border-radius: 20px;
-  font-family: 'warcraft', sans-serif;
-  font-size: 19px;
-  transition: 350ms ease-in-out;
+.generate{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.label_text{
-  color: var(--color_2);
-  position: absolute;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 250ms ease-in-out;
+.num_field {
+    position: absolute;
+    left: 90%;
+    transform: translateX(-90%);
+    border: none;
+    background-color: var(--color_4);
+    color: var(--color_1);
+    height: 30px;
+    width: 1.4em;
+    text-align: center;
+    font-display: block;
+    font-family: 'warcraft', sans-serif;
+    font-size: 40px;
 }
 
-.assign_reset{
-  position: absolute;
-  width: 60px;
-  top: 60%;
-  left: 40%;
-  transform: translatex(-40%);
+.ul_stats {
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+    margin-left: 0;
 }
 
-::placeholder{
+.stats_labels {
+    display: none;
+    position: absolute;
+    text-align: center;
+    align-content: center;
+    left: 5%;
+    height: 30px;
+    width: 45px;
+    background-color: var(--color_2);
+    border-color: transparent;
+    border-radius: 20px;
+    font-family: 'warcraft', sans-serif;
+    font-size: 19px;
+    transition: 350ms ease-in-out;
+}
+
+.label_text {
+    color: var(--color_4);
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 250ms ease-in-out;
+}
+
+.assign_reset {
+    position: absolute;
+    width: 60px;
+    top: 70%;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+::placeholder {
     color: var(--color_4);
 }
 
 
 /* 610 small   -   1025 medium */
-@media screen and (min-width: 1090px){
+@media screen and (min-width: 1090px) {
 
-    .nav-toggle-label{
+    .nav-toggle-label {
         display: none;
     }
 
-    header{
+    header {
         display: grid;
         grid-template-columns: .2fr 1fr minmax(1000px, 1fr) 1fr;
     }
 
-    .logo{
+    .logo {
         display: flex;
         gap: 10px;
         top: 5px;
@@ -402,16 +438,16 @@ label{
         justify-content: center;
         text-align: center;
     }
-    
-    .logo_title{
+
+    .logo_title {
         margin: auto 0;
         font-size: 50px;
     }
 
-    nav{
+    nav {
         all: unset;
         margin-right: 10px;
-        grid-column: 3 / 4 ;   
+        grid-column: 3 / 4;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -419,12 +455,12 @@ label{
         width: 800px;
     }
 
-    nav li{
+    nav li {
         margin-left: 2em;
         margin-bottom: 0;
     }
 
-    nav ul{
+    nav ul {
         display: flex;
         justify-content: flex-end;
     }
