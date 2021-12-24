@@ -29,6 +29,7 @@ body, html {
     /* background-position: left; */
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-x: hidden;
     font-family: 'warcraft', sans-serif;
     /* animation: bg-animation 15s infinite alternate; */
 }
@@ -138,7 +139,7 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 100vw;
     transform: scale(0, 1);
     transform-origin: left;
     transition: transform 400ms ease-in-out;
