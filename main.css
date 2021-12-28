@@ -469,4 +469,63 @@ label {
     nav a {
         opacity: 1;
     }
+
+    .characteristics {
+        position: relative;
+        width: 50vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em 2em;
+    }
+    
+    .fieldset {
+        width: 10em;
+        height: 15em;
+        background-color: var(--color_3);
+        border-radius: 10% 10%;
+        border: none;
+        outline: none;
+    }
+    
+    .fieldset.race {
+        justify-self: right;
+        grid-column: 1 / 2;
+    
+    }
+    
+    .fieldset.gender {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        grid-column: -3 / -1;
+        height: 8em;
+    }
+    
+    .fieldset.class {
+        grid-column: 2 / 3;
+    }
+
+    .stats {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em 2em;
+        margin-top: 2em;
+    }
+    
+    .fieldset.generator {
+        position: relative;
+        width: 10em;
+        height: 19em;
+        grid-column: 2 / 3;
+        justify-self: left;
+    }
+    
+    .fieldset.stats {
+        position: relative;
+        width: 10em;
+        grid-column: 1 / 2;
+        justify-self: right;
+    }
+
+
 }
