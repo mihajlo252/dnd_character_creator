@@ -195,6 +195,10 @@ main {
     gap: 1em 2em;
 }
 
+.description{
+    display: none;
+}
+
 .fieldset {
     width: 10em;
     height: 15em;
@@ -470,12 +474,26 @@ label {
         opacity: 1;
     }
 
+    
     .characteristics {
         position: relative;
-        width: 50vw;
+        width: 90vw;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 1em 2em;
+        margin-left: 1em;
+    }
+
+    .description{
+        display: block;
+        width: 40em;
+        height: 20em;
+        background-color: var(--color_3);
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        border-radius: 10% 10%;
+        border: none;
+        outline: none;
     }
     
     .fieldset {
@@ -496,7 +514,7 @@ label {
     .fieldset.gender {
         margin-left: 50%;
         transform: translateX(-50%);
-        grid-column: -3 / -1;
+        grid-column: -4 / -2;
         height: 8em;
     }
     
